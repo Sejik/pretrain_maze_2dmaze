@@ -12,7 +12,7 @@ action_repeat: 1 # set to 2 for pixels
 discount: 0.99
 # train settings
 num_pretrain_frames: 500010 # 2000010
-num_train_frames: 2500010 # 9000010
+num_train_frames: 2000010 # 9000010
 num_seed_frames: 4000
 # eval
 eval_every_frames: 10000

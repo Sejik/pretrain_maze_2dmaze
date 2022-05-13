@@ -455,6 +455,8 @@ class Workspace:
         for _ in range(len(self.replay_storage_smm)//self.cfg.batch_size):
             batch = next(self.replay_iter_smm)
             _, _, _, _, obs, _ = batch
+            if False in ((obs > -0.5) * (obs < 9.5)):
+                continue
             dataset.append(torch.tensor(obs).to(self.cfg.device))
         dataset = torch.stack(dataset).reshape(-1, 2)
                 
