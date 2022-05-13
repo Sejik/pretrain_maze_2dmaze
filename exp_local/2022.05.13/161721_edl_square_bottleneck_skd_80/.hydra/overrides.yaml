@@ -1,0 +1,3 @@
+- num_pretrain_frames=10010
+- num_train_frames=10010
+- snapshots=[10000]
