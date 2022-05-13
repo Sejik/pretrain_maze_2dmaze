@@ -480,7 +480,7 @@ class Workspace:
         self.replay_storage.add(time_step, meta)
         metrics = None
         _compress_me = list()
-        while True: # train_until_step(self.global_step):
+        while train_until_step(self.global_step):
             if time_step.last():
                 if self.cfg.sibling_rivalry:
                     achieved0 = torch.stack([x[2] for x in _compress_me])
