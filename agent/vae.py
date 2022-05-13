@@ -223,7 +223,7 @@ class VQVAEDiscriminator(VQVAEDensity):
         x_ = self.decoder(z_q_x).detach()
         log_q_s_z = -1. * self.mse_loss(next_obs, x_).sum(dim=1)
         
-        return torch.clip(log_q_s_z, max=10.0)
+        return torch.clamp(log_q_s_z, max=10.0)
         
         '''
         sum_q_s_z_i = torch.zeros_like(log_q_s_z)
